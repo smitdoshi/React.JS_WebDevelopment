@@ -4,6 +4,11 @@ class App extends Component {
     constructor(){
         super(); // Calling super in order invoke the constructor of parent class, React Component in our case.
         this.state = { displayBio: false };
+        console.log('Component this', this);
+        // On checking in the console we see the above "this" is the app. 
+        // If we expand the app > __prototype__ > __prototype__ > we see this has setState function
+
+ 
     }
 
     // Adding a trigger functionality to displayBio true in the state.
@@ -18,11 +23,19 @@ class App extends Component {
         // setState -> Component helper method for updating the values in the state object.
         
         // Implementation of setState method is used by calling this.setState and it's input is an object.
-        this.setState({ displayBio: true }); /* the key in this object are whatever key we want to update in the state */
+        
+        // this.setState({ displayBio: true }); /* the key in this object are whatever key we want to update in the state */
 
         // In react we can use onClick property for an element that references a method to fire.
         // And under the hood the react eninge code react will know to trigger the method when the element is actually clicked.
 
+        /* ------------- Debugging setState undefined issue when button clicked -------------*/
+        console.log('readMore this', this);
+        // When clicked on button, we see "this object" within the readMore function itself is undefined.
+        // The reason for this is that class method don't have logic to create their own this object
+        // Class method written this way is essentially a convenient way to click various methods to fire like a Script.
+        // It's not a an object or a class instance itself.
+        // Therefor it doesn't make it's own "this" object. Hence the setState won't be attached
     }
 
     render() {
