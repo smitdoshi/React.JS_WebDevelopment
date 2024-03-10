@@ -13,6 +13,8 @@ class App extends Component {
             console.log('readMore this', this);
             // this.setState({ displayBio: true });
         }
+        // This worked
+        // By attaching the method directly onto this object within the constructor, it has access to the *** app components of this object ***
  
     }
 
