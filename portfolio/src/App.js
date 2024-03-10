@@ -27,6 +27,16 @@ class App extends Component {
          * .bind method => for methods that allow us to pass this object from one object to another.
          * That way we can bind the "this" object of the component itself to the helper method.
         */
+
+        // this.readMore.bind(this);
+
+        /**
+         * This actually produces a new function that is the result of creating a function 
+         * that has "this" object from the component bound to this readMore function.
+         * */
+
+        // Now set this.readMore to that result.
+        this.readMore = this.readMore.bind(this);
     }
 
     // Adding a trigger functionality to displayBio true in the state.
