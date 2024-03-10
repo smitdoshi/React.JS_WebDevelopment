@@ -21,9 +21,10 @@ class App extends Component {
         // this.toggleDisplayBio = () => {...}
     }
 
-    // Refactored render method to use class properties syntax
-    // render arrow fucntion that has a callback which returns JSX
-    render = () => {
+    // Keeping render as it is since it's the most fundamental method for a react cmponent and 
+    // React already ensures to attach the render method to "this" object within the logic for the regular Component class already that we're extending
+
+    render() {
         return (
             <div>
                 <h1>Hello!</h1>
