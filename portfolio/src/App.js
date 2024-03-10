@@ -27,8 +27,12 @@ class App extends Component {
 
     }
 
-    // Adding a trigger functionality to displayBio true in the state.
-    // New helper method
+    // Adding toggle method to combine above two method.
+    // toggleDisplayBio => will set the displayBio to it's opposite value whatever currently it may be.
+    toggleDisplayBio(){
+        this.setState({ displayBio: !this.state.displayBio });
+    }
+    
     readMore() {
         console.log('readMore this', this);
         this.setState({ displayBio: true });
@@ -38,6 +42,9 @@ class App extends Component {
         console.log('showLess this', this);
         this.setState({ displayBio: false });
     }
+
+    // combining above method into one
+
 
     render() {
         // to make block of JSX use ();
@@ -56,7 +63,7 @@ class App extends Component {
         // Since we are using const bio variable only once we can take whole bio section and render it inline JSX
 
         // Now we will be giving control to the users to display Bio or Not, by implementing SetState Concepts
-         return (
+        return (
             <div>
                 <h1>Hello!</h1>
                 <p>My name is Smit. I'm a software engineer.</p>
