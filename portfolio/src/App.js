@@ -26,12 +26,6 @@ class App extends Component {
         this.showLess = this.showLess.bind(this);
 
     }
-
-    // Adding toggle method to combine above two method.
-    // toggleDisplayBio => will set the displayBio to it's opposite value whatever currently it may be.
-    toggleDisplayBio(){
-        this.setState({ displayBio: !this.state.displayBio });
-    }
     
     readMore() {
         console.log('readMore this', this);
@@ -43,7 +37,11 @@ class App extends Component {
         this.setState({ displayBio: false });
     }
 
-    // combining above method into one
+    // Adding toggle method to combine above readMore and showLess method.
+    // toggleDisplayBio => will set the displayBio to it's opposite value whatever currently it may be.
+    toggleDisplayBio(){
+        this.setState({ displayBio: !this.state.displayBio });
+    }
 
 
     render() {
