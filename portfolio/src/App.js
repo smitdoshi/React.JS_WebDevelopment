@@ -35,7 +35,13 @@ class App extends Component {
         // The reason for this is that class method don't have logic to create their own this object
         // Class method written this way is essentially a convenient way to click various methods to fire like a Script.
         // It's not a an object or a class instance itself.
-        // Therefor it doesn't make it's own "this" object. Hence the setState won't be attached
+        // Therefor it doesn't make it's own "this" object. Hence the setState won't be attached.
+
+        // But in our case if we still want the setState method attached to "this object of the component" 
+        // to be available to "this" object within the readMore method so 
+        
+        // one way to do this is to directly attach the method within the constructor to the "component of this object".
+
     }
 
     render() {
