@@ -19,6 +19,10 @@ class App extends Component {
         
         // Implementation of setState method is used by calling this.setState and it's input is an object.
         this.setState({ displayBio: true }); /* the key in this object are whatever key we want to update in the state */
+
+        // In react we can use onClick property for an element that references a method to fire.
+        // And under the hood the react eninge code react will know to trigger the method when the element is actually clicked.
+
     }
 
     render() {
@@ -52,7 +56,7 @@ class App extends Component {
                     </div>
                 ) : (
                     <div>
-                        <button>Read More</button>
+                        <button onClick={this.readMore}>Read More</button>
                     </div>
                 )
             }
