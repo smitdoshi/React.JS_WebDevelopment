@@ -4,38 +4,11 @@ class App extends Component {
     constructor(){
         super(); // Calling super in order invoke the constructor of parent class, React Component in our case.
         this.state = { displayBio: false };
-        console.log('Component this', this);
-        
-        /** BEST Approach Solution
-         * Luckily in Javascript we have a special 
-         * .bind method => for methods that allow us to pass this object from one object to another.
-         * That way we can bind the "this" object of the component itself to the helper method.
-        */
 
-        // this.readMore.bind(this);
-
-        /**
-         * This actually produces a new function that is the result of creating a function 
-         * that has "this" object from the component bound to this readMore function.
-         * */
-
-        // Now set this.readMore to that result.
-        this.readMore = this.readMore.bind(this);
-
-        // Similarly for readLess
-        this.showLess = this.showLess.bind(this);
+        this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
 
     }
     
-    readMore() {
-        console.log('readMore this', this);
-        this.setState({ displayBio: true });
-    }
-
-    showLess() {
-        console.log('showLess this', this);
-        this.setState({ displayBio: false });
-    }
 
     // Adding toggle method to combine above readMore and showLess method.
     // toggleDisplayBio => will set the displayBio to it's opposite value whatever currently it may be.
@@ -72,12 +45,12 @@ class App extends Component {
                             <p>I live in Orlando, and code every day.</p>
                             <p> My favourite language is Javasript, and I am learning React.js</p>
                             <p> Beisde coding, I love being outdoor and travelling.</p>
-                            <button onClick={this.showLess}>Show Less</button>
+                            <button onClick={this.toggleDisplayBio}>Show Less</button>
 
                     </div>
                 ) : (
                     <div>
-                        <button onClick={this.readMore}>Read More</button>
+                        <button onClick={this.toggleDisplayBio}>Read More</button>
                     </div>
                 )
             }
