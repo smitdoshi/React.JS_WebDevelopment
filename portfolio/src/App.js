@@ -8,14 +8,20 @@ class App extends Component {
         // On checking in the console we see the above "this" is the app. 
         // If we expand the app > __prototype__ > __prototype__ > we see this has setState function
 
-        // Solution: rather than clearning, declaring a class method within the constructor.
-        this.readMore = () =>{
-            console.log('readMore this', this);
-            // this.setState({ displayBio: true });
-        }
+        // Solution1 : rather than clearning, declaring a class method within the constructor.
+        // this.readMore = () =>{
+        //     console.log('readMore this', this);
+        //     // this.setState({ displayBio: true });
+        // }
         // This worked
         // By attaching the method directly onto this object within the constructor, it has access to the *** app components of this object ***
  
+        /** Think of this Scenario where we have 5 or even 10 more of these methods for the component  
+         * Would we want to write each of these methods within the constructor every time??
+         * Proably Not
+         * It's much more cleaner to have this at the class level.
+        */
+
     }
 
     // Adding a trigger functionality to displayBio true in the state.
