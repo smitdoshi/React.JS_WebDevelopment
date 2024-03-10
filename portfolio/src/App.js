@@ -21,7 +21,9 @@ class App extends Component {
         // this.toggleDisplayBio = () => {...}
     }
 
-    render() {
+    // Refactored render method to use class properties syntax
+    // render arrow fucntion that has a callback which returns JSX
+    render = () => {
         return (
             <div>
                 <h1>Hello!</h1>
