@@ -6,7 +6,20 @@ class App extends Component {
         this.state = { displayBio: false };
     }
 
-
+    // Adding a trigger functionality to displayBio true in the state.
+    // New helper method
+    readMore() {
+        // let's change the this.state.displayBio to true.
+        
+        // this.state.displayBio = true; // this really tempting to directly modify the component state object in react.
+        // In react it's a huge BAD practice to modify the component's state directly
+        
+        // Instead of doing this react attaches a helper method to the component called setState.
+        // setState -> Component helper method for updating the values in the state object.
+        
+        // Implementation of setState method is used by calling this.setState and it's input is an object.
+        this.setState({ displayBio: true }); /* the key in this object are whatever key we want to update in the state */
+    }
 
     render() {
         // to make block of JSX use ();
