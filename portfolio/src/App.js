@@ -1,20 +1,44 @@
 import React, { Component }from 'react';
 
 class App extends Component {
-    constructor(){
-        super(); // Calling super in order invoke the constructor of parent class, React Component in our case.
-        this.state = { displayBio: false };
 
-        this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
-
+    /** BEST Approach of using Class Properties and Initializers Syntax
+     *  SO commenting Constructor and
+     * Now we don't have to directly attach it to the "this" object.
+    */
+    state = { displayBio: false };  // this is equivalent to the cod we have in constructor
+    
+    /** 
+     * The above code is so convenient for methods because 
+     * we can now directly attach toggelDisplayBio to "this" object by having 
+     * toggleDisplayBio equal a callbarck function with the arrow fucntion syntax
+     * that calls this.setState
+    */
+    
+    toggleDisplayBio = () =>{
+        this.setState({ displayBio: !this.state.displayBio });
+        // under hood it's as if we wrote this.toggleDisplayBio equals an arrow function right within the constructor. 
+        // this.toggleDisplayBio = () => {...}
     }
+
+
+    // constructor(){
+    //     super(); // Calling super in order invoke the constructor of parent class, React Component in our case.
+    //     this.state = { displayBio: false };
+
+    //     this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
+    // }
+    
     
 
     // Adding toggle method to combine above readMore and showLess method.
     // toggleDisplayBio => will set the displayBio to it's opposite value whatever currently it may be.
-    toggleDisplayBio(){
-        this.setState({ displayBio: !this.state.displayBio });
-    }
+    /**
+     *  toggleDisplayBio(){
+            this.setState({ displayBio: !this.state.displayBio });
+        }
+     */
+    
 
 
     render() {
