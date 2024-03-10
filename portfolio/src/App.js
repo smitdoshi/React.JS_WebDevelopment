@@ -8,6 +8,11 @@ class App extends Component {
         // On checking in the console we see the above "this" is the app. 
         // If we expand the app > __prototype__ > __prototype__ > we see this has setState function
 
+        // Solution: rather than clearning, declaring a class method within the constructor.
+        this.readMore = () =>{
+            console.log('readMore this', this);
+            // this.setState({ displayBio: true });
+        }
  
     }
 
@@ -30,7 +35,7 @@ class App extends Component {
         // And under the hood the react eninge code react will know to trigger the method when the element is actually clicked.
 
         /* ------------- Debugging setState undefined issue when button clicked -------------*/
-        console.log('readMore this', this);
+        // console.log('readMore this', this);
         // When clicked on button, we see "this object" within the readMore function itself is undefined.
         // The reason for this is that class method don't have logic to create their own this object
         // Class method written this way is essentially a convenient way to click various methods to fire like a Script.
@@ -39,9 +44,7 @@ class App extends Component {
 
         // But in our case if we still want the setState method attached to "this object of the component" 
         // to be available to "this" object within the readMore method so 
-        
         // one way to do this is to directly attach the method within the constructor to the "component of this object".
-
     }
 
     render() {
