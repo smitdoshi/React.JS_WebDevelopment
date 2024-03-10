@@ -5,24 +5,8 @@ class App extends Component {
         super(); // Calling super in order invoke the constructor of parent class, React Component in our case.
         this.state = { displayBio: false };
         console.log('Component this', this);
-        // On checking in the console we see the above "this" is the app. 
-        // If we expand the app > __prototype__ > __prototype__ > we see this has setState function
-
-        // Solution1 : rather than clearning, declaring a class method within the constructor.
-        // this.readMore = () =>{
-        //     console.log('readMore this', this);
-        //     // this.setState({ displayBio: true });
-        // }
-        // This worked
-        // By attaching the method directly onto this object within the constructor, it has access to the *** app components of this object ***
- 
-        /** Think of this Scenario where we have 5 or even 10 more of these methods for the component  
-         * Would we want to write each of these methods within the constructor every time??
-         * Proably Not
-         * It's much more cleaner to have this at the class level.
-        */
-
-        /** Solution 2: BEST Approach
+        
+        /** BEST Approach Solution
          * Luckily in Javascript we have a special 
          * .bind method => for methods that allow us to pass this object from one object to another.
          * That way we can bind the "this" object of the component itself to the helper method.
@@ -42,32 +26,8 @@ class App extends Component {
     // Adding a trigger functionality to displayBio true in the state.
     // New helper method
     readMore() {
-        // let's change the this.state.displayBio to true.
-        
-        // this.state.displayBio = true; // this really tempting to directly modify the component state object in react.
-        // In react it's a huge BAD practice to modify the component's state directly
-        
-        // Instead of doing this react attaches a helper method to the component called setState.
-        // setState -> Component helper method for updating the values in the state object.
-        
-        // Implementation of setState method is used by calling this.setState and it's input is an object.
-        
-        // this.setState({ displayBio: true }); /* the key in this object are whatever key we want to update in the state */
-
-        // In react we can use onClick property for an element that references a method to fire.
-        // And under the hood the react eninge code react will know to trigger the method when the element is actually clicked.
-
-        /* ------------- Debugging setState undefined issue when button clicked -------------*/
-        // console.log('readMore this', this);
-        // When clicked on button, we see "this object" within the readMore function itself is undefined.
-        // The reason for this is that class method don't have logic to create their own this object
-        // Class method written this way is essentially a convenient way to click various methods to fire like a Script.
-        // It's not a an object or a class instance itself.
-        // Therefor it doesn't make it's own "this" object. Hence the setState won't be attached.
-
-        // But in our case if we still want the setState method attached to "this object of the component" 
-        // to be available to "this" object within the readMore method so 
-        // one way to do this is to directly attach the method within the constructor to the "component of this object".
+        console.log('readMore this', this);
+        this.setState({ displayBio: true });
     }
 
     render() {
