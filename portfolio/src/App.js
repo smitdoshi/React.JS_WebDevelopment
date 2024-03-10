@@ -21,6 +21,10 @@ class App extends Component {
 
         // Now set this.readMore to that result.
         this.readMore = this.readMore.bind(this);
+
+        // Similarly for readLess
+        this.showLess = this.showLess.bind(this);
+
     }
 
     // Adding a trigger functionality to displayBio true in the state.
@@ -28,6 +32,11 @@ class App extends Component {
     readMore() {
         console.log('readMore this', this);
         this.setState({ displayBio: true });
+    }
+
+    showLess() {
+        console.log('showLess this', this);
+        this.setState({ displayBio: false });
     }
 
     render() {
@@ -58,6 +67,8 @@ class App extends Component {
                             <p>I live in Orlando, and code every day.</p>
                             <p> My favourite language is Javasript, and I am learning React.js</p>
                             <p> Beisde coding, I love being outdoor and travelling.</p>
+                            <button onClick={this.showLess}>Show Less</button>
+
                     </div>
                 ) : (
                     <div>
