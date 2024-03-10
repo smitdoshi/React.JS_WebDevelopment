@@ -3,7 +3,7 @@ import React, { Component }from 'react';
 class App extends Component {
     constructor(){
         super(); // Calling super in order invoke the constructor of parent class, React Component in our case.
-        this.state = { displayBio: true };
+        this.state = { displayBio: false };
     }
 
 
@@ -24,6 +24,7 @@ class App extends Component {
         // Added a condition to check displayBio value
         // Since we are using const bio variable only once we can take whole bio section and render it inline JSX
 
+        // Now we will be giving control to the users to display Bio or Not, by implementing SetState Concepts
          return (
             <div>
                 <h1>Hello!</h1>
@@ -36,7 +37,11 @@ class App extends Component {
                             <p> My favourite language is Javasript, and I am learning React.js</p>
                             <p> Beisde coding, I love being outdoor and travelling.</p>
                     </div>
-                ) : null
+                ) : (
+                    <div>
+                        <button>Read More</button>
+                    </div>
+                )
             }
             </div>
         );
