@@ -22,6 +22,11 @@ class App extends Component {
          * It's much more cleaner to have this at the class level.
         */
 
+        /** Solution 2: BEST Approach
+         * Luckily in Javascript we have a special 
+         * .bind method => for methods that allow us to pass this object from one object to another.
+         * That way we can bind the "this" object of the component itself to the helper method.
+        */
     }
 
     // Adding a trigger functionality to displayBio true in the state.
