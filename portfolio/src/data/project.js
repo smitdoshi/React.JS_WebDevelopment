@@ -1,12 +1,9 @@
- import project1 from '../assets/project1.png';
- import project2 from '../assets/project2.png';
- import project3 from '../assets/project3.png';
+import project1 from '../assets/project1.png';
+import project2 from '../assets/project1.png';
+import project3 from '../assets/project1.png';
 
 
- // Here notice PROJECTS is all in uppercase it's called SCREAM_CASE syntax
- // In the convention for global values in a javascript project is to use SCREAM_CASE syntax.
- 
- const PROJECTS = [
+const PROJECTS = [
     {
         id: 1,
         title: 'Example React Application',
