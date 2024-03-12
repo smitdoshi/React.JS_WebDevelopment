@@ -6,6 +6,7 @@ class Project extends Component{
         console.log('this.props', this.props);
 
         // Javascript Destruction Syntax
+
         const { title, image, description, link} = this.props.project;
 
         /*
@@ -19,10 +20,12 @@ class Project extends Component{
 
         return (
             <div>
-                <h3>{title}</h3>
+                <h3>
+                    {title}
+                </h3>
                 <img src={image} alt='profile'></img>
                 <p>{description}</p>
-                <a href={link}></a>
+                <a href={link}>{link}</a>
             </div>
         )
     }
