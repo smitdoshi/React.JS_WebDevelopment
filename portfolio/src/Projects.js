@@ -19,13 +19,13 @@ class Project extends Component{
         */ 
 
         return (
-            <div>
+            <div style={{ display: 'inline-block', width:300, margin: 10}}>
                 <h3>
                     {title}
                 </h3>
-                <img src={image} alt='profile'></img>
+                <img src={image} alt='profile' style={{width:200, height:120}}></img>
                 <p>{description}</p>
-                <a href={link}>{link}</a>
+                <a href={link} style={{ display: 'inline-block', width:300, margin: 10}}>{link}</a>
             </div>
         )
     }
